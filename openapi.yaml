@@ -1,5 +1,6 @@
 # Converted by: Flattening yaml merge keys, running through the https://editor.swagger.io/ converter, then manually fixing oneOf types
 # API spec converted to OpenAPI 3.0.1
+# THIS FILE IS GNU GPL V2.0 DUE TO THE LICENSE OF PowerDNS
 openapi: 3.0.1
 info:
   title: PowerDNS Authoritative HTTP API
