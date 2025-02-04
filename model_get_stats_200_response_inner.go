@@ -53,7 +53,7 @@ func (dst *GetStats200ResponseInner) UnmarshalJSON(data []byte) error {
 	err = newStrictDecoder(data).Decode(&dst.MapStatisticItem)
 	if err == nil {
 		jsonMapStatisticItem, _ := json.Marshal(dst.MapStatisticItem)
-		if string(jsonMapStatisticItem) == "{}" { // empty struct
+		if string(jsonMapStatisticItem) == "{}" || *dst.MapStatisticItem.Type != "MapStatisticItem" { // empty struct
 			dst.MapStatisticItem = nil
 		} else {
 			if err = validator.Validate(dst.MapStatisticItem); err != nil {
@@ -70,7 +70,7 @@ func (dst *GetStats200ResponseInner) UnmarshalJSON(data []byte) error {
 	err = newStrictDecoder(data).Decode(&dst.RingStatisticItem)
 	if err == nil {
 		jsonRingStatisticItem, _ := json.Marshal(dst.RingStatisticItem)
-		if string(jsonRingStatisticItem) == "{}" { // empty struct
+		if string(jsonRingStatisticItem) == "{}" || *dst.RingStatisticItem.Type != "RingStatisticItem"  { // empty struct
 			dst.RingStatisticItem = nil
 		} else {
 			if err = validator.Validate(dst.RingStatisticItem); err != nil {
@@ -87,7 +87,7 @@ func (dst *GetStats200ResponseInner) UnmarshalJSON(data []byte) error {
 	err = newStrictDecoder(data).Decode(&dst.StatisticItem)
 	if err == nil {
 		jsonStatisticItem, _ := json.Marshal(dst.StatisticItem)
-		if string(jsonStatisticItem) == "{}" { // empty struct
+		if string(jsonStatisticItem) == "{}" || *dst.StatisticItem.Type != "StatisticItem" { // empty struct
 			dst.StatisticItem = nil
 		} else {
 			if err = validator.Validate(dst.StatisticItem); err != nil {

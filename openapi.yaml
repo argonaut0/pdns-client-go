@@ -1,6 +1,5 @@
 # Converted by: Flattening yaml merge keys, running through the https://editor.swagger.io/ converter, then manually fixing oneOf types
 # API spec converted to OpenAPI 3.0.1
-# THIS FILE IS GNU GPL V2.0 DUE TO THE LICENSE OF PowerDNS
 openapi: 3.0.1
 info:
   title: PowerDNS Authoritative HTTP API
@@ -1934,6 +1933,8 @@ components:
       properties:
         type:
           type: string
+          enum:
+          - Server
           description: Set to “Server”
         id:
           type: string
@@ -1973,6 +1974,8 @@ components:
             dot
         type:
           type: string
+          enum:
+          - Zone
           description: Set to “Zone”
         url:
           type: string
@@ -2159,6 +2162,8 @@ components:
             \ be empty when POSTing to have the server generate the key material"
         type:
           type: string
+          enum:
+          - TSIGKey
           description: Set to "TSIGKey"
           readOnly: true
       description: "A TSIG key that can be used to authenticate NOTIFY, AXFR, and\
@@ -2183,6 +2188,8 @@ components:
       properties:
         name:
           type: string
+          enum:
+          - ConfigSetting
           description: set to "ConfigSetting"
         type:
           type: string
@@ -2210,6 +2217,8 @@ components:
         type:
           type: string
           description: set to "StatisticItem"
+          enum:
+          - StatisticItem
         value:
           type: string
           description: 'Item value'
@@ -2223,6 +2232,8 @@ components:
         type:
           type: string
           description: Set to "MapStatisticItem"
+          enum:
+          - MapStatisticItem
         value:
           type: array
           description: 'Named values'
@@ -2237,6 +2248,8 @@ components:
         type:
           type: string
           description: 'Set to "RingStatisticItem"'
+          enum:
+          - RingStatisticItem
         size:
           type: integer
           description: 'Ring size'
@@ -2253,6 +2266,8 @@ components:
           type: string
         object_type:
           type: string
+          enum:
+          - zone
           description: set to "zone"
         zone_id:
           type: string
@@ -2268,6 +2283,8 @@ components:
           type: string
         object_type:
           type: string
+          enum:
+          - record
           description: set to "record"
         zone_id:
           type: string
@@ -2287,6 +2304,8 @@ components:
           type: string
         object_type:
           type: string
+          enum:
+          - comment
           description: set to "comment"
         zone_id:
           type: string
@@ -2304,6 +2323,10 @@ components:
           type: string
         object_type:
           type: string
+          enum:
+          - record
+          - zone
+          - comment
           description: "set to one of \"record, zone, comment\""
         zone_id:
           type: string
@@ -2336,6 +2359,8 @@ components:
       properties:
         type:
           type: string
+          enum:
+          - Cryptokey
           description: set to "Cryptokey"
         id:
           type: integer
